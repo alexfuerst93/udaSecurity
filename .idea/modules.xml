@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/catpoint-parent.iml" filepath="$PROJECT_DIR$/catpoint-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageService/imageService.iml" filepath="$PROJECT_DIR$/imageService/imageService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/securityService/securityService.iml" filepath="$PROJECT_DIR$/securityService/securityService.iml" />
+    </modules>
+  </component>
+</project>

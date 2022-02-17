@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/imageService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imageService/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securityService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/securityService/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/CatpointApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/CatpointApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/CatpointGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/CatpointGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/ControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/DisplayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/DisplayPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/SensorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/SensorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/application/StatusListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/application/StatusListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/AlarmStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/AlarmStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/ArmingStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/ArmingStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/PretendDatabaseSecurityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/PretendDatabaseSecurityRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/SecurityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/SecurityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/Sensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/data/SensorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/data/SensorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/service/AwsImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/src/main/java/com/udacity/catpoint/image/service/AwsImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/service/FakeImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/src/main/java/com/udacity/catpoint/image/service/FakeImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/service/SecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/catpoint/service/StyleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/src/main/java/com/udacity/catpoint/image/service/StyleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/catpoint/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/test/java/com/udacity/catpoint/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="25E478KDApQHzRY1le7LLwwJxxZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="14" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/data" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent\securityService\src\main\java\com\udacity\catpoint\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Java\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent\securityService\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CatpointApp (1)">
+    <configuration name="CatpointApp (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.application.CatpointApp" />
+      <module name="securityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.catpoint.security.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CatpointApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.application.CatpointApp" />
+      <module name="securityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.catpoint.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CatpointApp (1)" />
+        <item itemvalue="Application.CatpointApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="" />
+      <created>1645078744381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645078744381</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
