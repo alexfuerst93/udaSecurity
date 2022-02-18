@@ -161,7 +161,42 @@ public class SecurityServiceTest {
         when(fakeImage.imageContainsCat(eq(noCatImage), anyFloat())).thenReturn(false);
         securityService.processImage((noCatImage));
 
-        // system changes to NO_ALARM even though sensors are active
+        // Problem: system changes to NO_ALARM even though sensors are active
+        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+    }
+
+    @Test
+    public void fizz() {
+        // 9. Requirement: If the system is disarmed, set the status to no alarm.
+        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.DISARMED);
+
+        securityService.setArmingStatus(newTestData.getArmingStatus());
+
+        verify(newTestData).setAlarmStatus(AlarmStatus.NO_ALARM);
+    }
+
+    @Test
+    public void second_last() {
+        // 10. If the system is armed, reset all sensors to inactive.
+        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
+        sensor.setActive(true);
+        securityService.addSensor(sensor);
+
+        // TODO: add the 2nd option for armed_away
+        securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
+        assertFalse(sensor.getActive());
+    }
+
+    @Test
+    public void last() {
+        // 11. If the system is armed-home while the camera shows a cat, set the alarm status to alarm.
+        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
+
+        BufferedImage catImage = new BufferedImage(50, 50, 1);
+        when(fakeImage.imageContainsCat(eq(catImage), anyFloat())).thenReturn(true);
+
+        securityService.processImage(catImage);
+
         verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
     }
 }

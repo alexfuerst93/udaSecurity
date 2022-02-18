@@ -73,7 +73,7 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest.bazz">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest.last">
     <configuration name="SecurityServiceTest.bar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
@@ -106,7 +106,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.fizz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +116,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="foo" />
+      <option name="METHOD_NAME" value="fizz" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.something_else" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -132,13 +132,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="something_else" />
+      <option name="METHOD_NAME" value="last" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.yet_again_something_else" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.second_last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +148,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="yet_again_something_else" />
+      <option name="METHOD_NAME" value="second_last" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecurityServiceTest.last" />
+        <item itemvalue="JUnit.SecurityServiceTest.second_last" />
+        <item itemvalue="JUnit.SecurityServiceTest.fizz" />
         <item itemvalue="JUnit.SecurityServiceTest.bazz" />
         <item itemvalue="JUnit.SecurityServiceTest.bar" />
-        <item itemvalue="JUnit.SecurityServiceTest.foo" />
-        <item itemvalue="JUnit.SecurityServiceTest.yet_again_something_else" />
-        <item itemvalue="JUnit.SecurityServiceTest.something_else" />
       </list>
     </recent_temporary>
   </component>
