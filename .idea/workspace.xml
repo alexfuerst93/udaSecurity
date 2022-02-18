@@ -73,8 +73,8 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest.something_else">
-    <configuration name="SecurityServiceTest.changeSensorActivationStatus_alarmArmedAndSensorActivated_returnPendingAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest.bazz">
+    <configuration name="SecurityServiceTest.bar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +84,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="changeSensorActivationStatus_alarmArmedAndSensorActivated_returnPendingAlarm" />
+      <option name="METHOD_NAME" value="bar" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.internal_confirmsCleanSystemStart_SystemIsNoAlarmAndDisarmed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.bazz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +100,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="internal_confirmsCleanSystemStart_SystemIsNoAlarmAndDisarmed" />
+      <option name="METHOD_NAME" value="bazz" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.something" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -116,7 +116,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="something" />
+      <option name="METHOD_NAME" value="foo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.what_method_am_I_testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.yet_again_something_else" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +148,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="what_method_am_I_testing" />
+      <option name="METHOD_NAME" value="yet_again_something_else" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecurityServiceTest.bazz" />
+        <item itemvalue="JUnit.SecurityServiceTest.bar" />
+        <item itemvalue="JUnit.SecurityServiceTest.foo" />
+        <item itemvalue="JUnit.SecurityServiceTest.yet_again_something_else" />
         <item itemvalue="JUnit.SecurityServiceTest.something_else" />
-        <item itemvalue="JUnit.SecurityServiceTest.something" />
-        <item itemvalue="JUnit.SecurityServiceTest.what_method_am_I_testing" />
-        <item itemvalue="JUnit.SecurityServiceTest.changeSensorActivationStatus_alarmArmedAndSensorActivated_returnPendingAlarm" />
-        <item itemvalue="JUnit.SecurityServiceTest.internal_confirmsCleanSystemStart_SystemIsNoAlarmAndDisarmed" />
       </list>
     </recent_temporary>
   </component>

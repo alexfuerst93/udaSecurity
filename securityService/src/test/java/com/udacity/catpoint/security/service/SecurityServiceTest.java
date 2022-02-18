@@ -1,6 +1,7 @@
 package com.udacity.catpoint.security.service;
 
 import com.udacity.catpoint.image.service.FakeImage;
+import com.udacity.catpoint.security.application.StatusListener;
 import com.udacity.catpoint.security.data.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.awt.image.BufferedImage;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -22,6 +25,9 @@ public class SecurityServiceTest {
 
     @Mock
     private PretendDatabaseSecurityRepositoryImpl newTestData;
+
+    @Mock
+    private StatusListener statusListener;
 
     @BeforeEach
     void init() {
@@ -101,6 +107,61 @@ public class SecurityServiceTest {
     @Test
     public void yet_again_something_else() {
         // 5. Requirement: If a sensor is activated while already active and the system is in pending state, change it to alarm state.
+        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
+        sensor.setActive(true); // sensor is already active
 
+        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
+        // TODO: Add the second option!
+        when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
+
+        securityService.addSensor(sensor);
+        securityService.changeSensorActivationStatus(sensor, true);
+
+        // Problem: If sensor does not change state, it will not get forwarded to another function, thus never changing AlarmStatus
+        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+    }
+
+    @Test
+    public void foo() {
+        // 6. Requirement: If a sensor is deactivated while already inactive, make no changes to the alarm state.
+        Sensor sensor = new Sensor("testSensor", SensorType.DOOR); // newly created sensors are per default deactivated
+
+        securityService.addSensor(sensor);
+        securityService.changeSensorActivationStatus(sensor, false);
+
+        // Problem: If sensor does not change state, it will not get forwarded to another function, thus never changing AlarmStatus
+        // feels like a bug, but works!
+        // TODO: Add the other 2 AlarmStatus stati
+        verify(newTestData, never()).setAlarmStatus(AlarmStatus.NO_ALARM);
+    }
+
+    @Test
+    public void bar() {
+        // 7. Requirement: If the image service identifies an image containing a cat while the system is armed-home, put the system into alarm status.
+        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
+
+        BufferedImage catImage = new BufferedImage(50, 50, 1);
+        when(fakeImage.imageContainsCat(eq(catImage), anyFloat())).thenReturn(true);
+
+        securityService.processImage(catImage); // this function calls the image interface, which "mocks" into True, meaning a cat got detected
+
+        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+    }
+
+    @Test
+    public void bazz() {
+        // 8. Requirement: If the image service identifies an image that does not contain a cat, change the status to no alarm as long as (= meaning 'only then') the sensors are not active.
+        when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.ALARM); // currently, the system is in alarm-state, because the sensor is active
+
+        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
+        sensor.setActive(true);
+        securityService.addSensor(sensor);
+
+        BufferedImage noCatImage = new BufferedImage(50, 50, 1);
+        when(fakeImage.imageContainsCat(eq(noCatImage), anyFloat())).thenReturn(false);
+        securityService.processImage((noCatImage));
+
+        // system changes to NO_ALARM even though sensors are active
+        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
     }
 }
