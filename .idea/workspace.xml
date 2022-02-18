@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/securityService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/securityService.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/service/SecurityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/securityService/src/test/java/com/udacity/catpoint/security/service/SecurityServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/test/java/com/udacity/catpoint/security/service/SecurityServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,8 +76,8 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest.last">
-    <configuration name="SecurityServiceTest.bar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest.processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm">
+    <configuration name="SecurityServiceTest.changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +87,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="bar" />
+      <option name="METHOD_NAME" value="changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.bazz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +103,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="bazz" />
+      <option name="METHOD_NAME" value="foo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.fizz" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.processImage_" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +119,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="fizz" />
+      <option name="METHOD_NAME" value="processImage_" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -132,13 +135,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="last" />
+      <option name="METHOD_NAME" value="processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.second_last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.processImage_armedCatDetected_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +151,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="second_last" />
+      <option name="METHOD_NAME" value="processImage_armedCatDetected_returnAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SecurityServiceTest.last" />
-        <item itemvalue="JUnit.SecurityServiceTest.second_last" />
-        <item itemvalue="JUnit.SecurityServiceTest.fizz" />
-        <item itemvalue="JUnit.SecurityServiceTest.bazz" />
-        <item itemvalue="JUnit.SecurityServiceTest.bar" />
+        <item itemvalue="JUnit.SecurityServiceTest.processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" />
+        <item itemvalue="JUnit.SecurityServiceTest.processImage_" />
+        <item itemvalue="JUnit.SecurityServiceTest.processImage_armedCatDetected_returnAlarm" />
+        <item itemvalue="JUnit.SecurityServiceTest.foo" />
+        <item itemvalue="JUnit.SecurityServiceTest.changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" />
       </list>
     </recent_temporary>
   </component>

@@ -6,11 +6,15 @@ import com.udacity.catpoint.security.data.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.awt.image.BufferedImage;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -18,7 +22,8 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class SecurityServiceTest {
 
-    private SecurityService securityService;
+    private SecurityService securityService; // All unit tests below test this specific ServiceClass
+    private Sensor sensor;
 
     @Mock
     private FakeImage fakeImage;
@@ -26,117 +31,97 @@ public class SecurityServiceTest {
     @Mock
     private PretendDatabaseSecurityRepositoryImpl newTestData;
 
-    @Mock
-    private StatusListener statusListener;
-
     @BeforeEach
     void init() {
         securityService = new SecurityService(newTestData, fakeImage);
+        sensor = new Sensor("testSensor", SensorType.DOOR);
     }
 
-    @Test
-    public void changeSensorActivationStatus_alarmArmedAndSensorActivated_returnPendingAlarm() {
-    // 1. Requirement: If alarm is armed and a sensor becomes activated, put the system into pending alarm status
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        Boolean sensorState = true;
+    private static Stream<Arguments> differentArmingStatus() {
+        return Stream.of(
+                Arguments.of(ArmingStatus.ARMED_HOME),
+                Arguments.of(ArmingStatus.ARMED_AWAY)
+        );
+    }
 
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-        // TODO: Add the second option!
-        //testData.setArmingStatus(ArmingStatus.ARMED_AWAY);
+    @ParameterizedTest
+    @MethodSource("differentArmingStatus")
+    public void changeSensorActivationStatus_armedAndActivatedSensor_returnPendingAlarm(ArmingStatus armingStatus) {
+    // 1. Requirement: If alarm is armed and a sensor becomes activated, put the system into pending alarm status
+        when(newTestData.getArmingStatus()).thenReturn(armingStatus);
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.NO_ALARM);
 
         securityService.addSensor(sensor);
-        securityService.changeSensorActivationStatus(sensor, sensorState);
+        securityService.changeSensorActivationStatus(sensor, true);
 
         verify(newTestData).setAlarmStatus(AlarmStatus.PENDING_ALARM);
-        //assertEquals(AlarmStatus.PENDING_ALARM, securityService.getAlarmStatus()); -> Doesnt work because return type is void
+        //assertEquals(AlarmStatus.PENDING_ALARM, securityService.getAlarmStatus()); -> Doesnt work because returns void
     }
 
-    @Test
-    public void what_method_am_I_testing() {
+    @ParameterizedTest
+    @MethodSource("differentArmingStatus")
+    public void changeSensorActivationStatus_armedPendingAndActivatedSensor_returnAlarm(ArmingStatus armingStatus) {
         // 2. Requirement: If alarm is armed and a sensor becomes activated and the system is already pending alarm, set the alarm status to alarm.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        Boolean sensorState = true;
-
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-        // TODO: Add the second option!
-        //testData.setArmingStatus(ArmingStatus.ARMED_AWAY);
+        when(newTestData.getArmingStatus()).thenReturn(armingStatus);
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
 
         securityService.addSensor(sensor);
-        securityService.changeSensorActivationStatus(sensor, sensorState);
+        securityService.changeSensorActivationStatus(sensor, true);
         verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
     }
 
     @Test
-    public void something() {
+    public void changeSensorActivationStatus_armedPendingAndInactiveSensor_returnNoAlarm() {
         // 3. Requirement: If pending alarm and all sensors are inactive, return to no alarm state.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        Boolean sensorState = true;
-
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-        // TODO: Add the second option!
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
 
         securityService.addSensor(sensor);
-        securityService.changeSensorActivationStatus(sensor, sensorState);
+        sensor.setActive(true);
         securityService.changeSensorActivationStatus(sensor, false);
 
         verify(newTestData).setAlarmStatus(AlarmStatus.NO_ALARM);
     }
 
     @Test
-    public void something_else() {
+    public void changeSensorActivationStatus_alarmActiveAndChangeSensorState_returnNoAlarmChange() {
         // 4. If alarm is active, change in sensor state should not affect the alarm state.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        Boolean sensorState = true;
-
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-        // TODO: Add the second option!
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.ALARM);
 
         securityService.addSensor(sensor);
-        securityService.changeSensorActivationStatus(sensor, sensorState);
+        sensor.setActive(true);
         securityService.changeSensorActivationStatus(sensor, false);
 
-        // Is my test false or the code?
-        // My understanding: Once the Alarm fires, even deactivated sensors won't change the status
-        verify(newTestData, never()).setAlarmStatus(AlarmStatus.PENDING_ALARM);
+        // My understanding: Once the Alarm fires, even deactivating sensors won't change the status
+        // Therefore, the source code must have a bug!
+        verify(newTestData, never()).setAlarmStatus(any(AlarmStatus.class));
     }
 
     @Test
-    public void yet_again_something_else() {
+    public void changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm() {
         // 5. Requirement: If a sensor is activated while already active and the system is in pending state, change it to alarm state.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        sensor.setActive(true); // sensor is already active
-
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
-        // TODO: Add the second option!
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
 
         securityService.addSensor(sensor);
+        sensor.setActive(true);
         securityService.changeSensorActivationStatus(sensor, true);
 
         // Problem: If sensor does not change state, it will not get forwarded to another function, thus never changing AlarmStatus
+        // Source code has a bug!
         verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
     }
 
     @Test
-    public void foo() {
+    public void changeSensorActivationStatus_deactivatedSensorGetsDeactivated_returnNoAlarmChanges() {
         // 6. Requirement: If a sensor is deactivated while already inactive, make no changes to the alarm state.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR); // newly created sensors are per default deactivated
-
-        securityService.addSensor(sensor);
+        securityService.addSensor(sensor); // newly created sensors are per default deactivated
         securityService.changeSensorActivationStatus(sensor, false);
 
-        // Problem: If sensor does not change state, it will not get forwarded to another function, thus never changing AlarmStatus
-        // feels like a bug, but works!
-        // TODO: Add the other 2 AlarmStatus stati
-        verify(newTestData, never()).setAlarmStatus(AlarmStatus.NO_ALARM);
+        // If sensor does not change state, it will not get forwarded to another function, thus never changing AlarmStatus
+        verify(newTestData, never()).setAlarmStatus(any(AlarmStatus.class));
     }
 
     @Test
-    public void bar() {
+    public void processImage_armedCatDetected_returnAlarm() {
         // 7. Requirement: If the image service identifies an image containing a cat while the system is armed-home, put the system into alarm status.
         when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
 
@@ -149,11 +134,8 @@ public class SecurityServiceTest {
     }
 
     @Test
-    public void bazz() {
+    public void processImage_ActiveSensorsAndNoCatImage_returnAlarm() {
         // 8. Requirement: If the image service identifies an image that does not contain a cat, change the status to no alarm as long as (= meaning 'only then') the sensors are not active.
-        when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.ALARM); // currently, the system is in alarm-state, because the sensor is active
-
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
         sensor.setActive(true);
         securityService.addSensor(sensor);
 
@@ -162,7 +144,8 @@ public class SecurityServiceTest {
         securityService.processImage((noCatImage));
 
         // Problem: system changes to NO_ALARM even though sensors are active
-        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+        // Source code has a bug!
+        verify(newTestData, never()).setAlarmStatus(any(AlarmStatus.class));
     }
 
     @Test
@@ -177,7 +160,7 @@ public class SecurityServiceTest {
 
     @Test
     public void second_last() {
-        // 10. If the system is armed, reset all sensors to inactive.
+        // 10. Requirement: If the system is armed, reset all sensors to inactive.
         Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
         sensor.setActive(true);
         securityService.addSensor(sensor);
@@ -189,7 +172,7 @@ public class SecurityServiceTest {
 
     @Test
     public void last() {
-        // 11. If the system is armed-home while the camera shows a cat, set the alarm status to alarm.
+        // 11. Requirement: If the system is armed-home while the camera shows a cat, set the alarm status to alarm.
         when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
 
         BufferedImage catImage = new BufferedImage(50, 50, 1);

@@ -50,9 +50,15 @@ public class SecurityService {
     private void catDetected(Boolean cat) {
         if(cat && getArmingStatus() == ArmingStatus.ARMED_HOME) {
             setAlarmStatus(AlarmStatus.ALARM);
-        } else {
+        }
+        else if (customFunction) {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         }
+        /* the else-statement below does not meet the 8th requirement. Commented out. --> Loop through all sensors! They need to be all deactivated! --> Do this in a new function which returns true or false
+        else {
+            setAlarmStatus(AlarmStatus.NO_ALARM);
+        }
+         */
         statusListeners.forEach(sl -> sl.catDetected(cat));
     }
 
@@ -96,7 +102,8 @@ public class SecurityService {
     private void handleSensorDeactivated() {
         switch(securityRepository.getAlarmStatus()) {
             case PENDING_ALARM -> setAlarmStatus(AlarmStatus.NO_ALARM);
-            case ALARM -> setAlarmStatus(AlarmStatus.PENDING_ALARM);
+            // Line below does not meet the 4th requirement. Commented out.
+            // case ALARM -> setAlarmStatus(AlarmStatus.PENDING_ALARM);
         }
     }
 
@@ -112,6 +119,9 @@ public class SecurityService {
             // if sensor is activated and I want to deactivate it
         } else if (sensor.getActive() && !active) {
             handleSensorDeactivated();
+            // condition for the 5th requirement added below:
+        } else if (sensor.getActive() && active) {
+            handleSensorActivated();
         }
         sensor.setActive(active);
         securityRepository.updateSensor(sensor);
