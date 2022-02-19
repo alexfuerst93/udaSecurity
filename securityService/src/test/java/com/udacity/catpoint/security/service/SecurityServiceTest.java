@@ -14,6 +14,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -136,8 +138,11 @@ public class SecurityServiceTest {
     @Test
     public void processImage_ActiveSensorsAndNoCatImage_returnAlarm() {
         // 8. Requirement: If the image service identifies an image that does not contain a cat, change the status to no alarm as long as (= meaning 'only then') the sensors are not active.
-        sensor.setActive(true);
+        Set<Sensor> sensorSet = Set.of(sensor);
+        when(newTestData.getSensors()).thenReturn(sensorSet);
+
         securityService.addSensor(sensor);
+        sensor.setActive(true);
 
         BufferedImage noCatImage = new BufferedImage(50, 50, 1);
         when(fakeImage.imageContainsCat(eq(noCatImage), anyFloat())).thenReturn(false);
@@ -149,29 +154,30 @@ public class SecurityServiceTest {
     }
 
     @Test
-    public void fizz() {
+    public void setArmingStatus_disarmSystem_returnAlarm() {
         // 9. Requirement: If the system is disarmed, set the status to no alarm.
-        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.DISARMED);
-
-        securityService.setArmingStatus(newTestData.getArmingStatus());
-
+        securityService.setArmingStatus(ArmingStatus.DISARMED);
         verify(newTestData).setAlarmStatus(AlarmStatus.NO_ALARM);
     }
 
-    @Test
-    public void second_last() {
+    @ParameterizedTest
+    @MethodSource("differentArmingStatus")
+    public void setArmingStatus_armedSystem_deactivateAllSensors(ArmingStatus armingStatus) {
         // 10. Requirement: If the system is armed, reset all sensors to inactive.
-        Sensor sensor = new Sensor("testSensor", SensorType.DOOR);
-        sensor.setActive(true);
-        securityService.addSensor(sensor);
+        Set<Sensor> sensorSet = Set.of(sensor);
+        when(newTestData.getSensors()).thenReturn(sensorSet);
 
-        // TODO: add the 2nd option for armed_away
-        securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
+        securityService.addSensor(sensor);
+        sensor.setActive(true);
+
+        securityService.setArmingStatus(armingStatus);
+        // The function does not change any sensor activity
+        // Source code has a bug!
         assertFalse(sensor.getActive());
     }
 
     @Test
-    public void last() {
+    public void processImage_armedHomeAndCatImage_returnAlarm() {
         // 11. Requirement: If the system is armed-home while the camera shows a cat, set the alarm status to alarm.
         when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.ARMED_HOME);
 

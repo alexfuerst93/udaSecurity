@@ -39,7 +39,29 @@ public class SecurityService {
         if(armingStatus == ArmingStatus.DISARMED) {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         }
+        // added handling sensor activity below to meet the 10th requirement
+        else if (armingStatus == ArmingStatus.ARMED_HOME || armingStatus == ArmingStatus.ARMED_AWAY) {
+            for (Sensor sensor : securityRepository.getSensors()) {
+                if (sensor.getActive()) {
+                    sensor.setActive(false);
+                }
+            }
+        }
         securityRepository.setArmingStatus(armingStatus);
+    }
+
+    /**
+     * Internal method that checks the activation status of sensors
+     * @return true if all sensors are deactivated
+     */
+    private Boolean allSensorsDeactivated() {
+        Set<Sensor> allSensors = securityRepository.getSensors();
+        for (Sensor sensor : allSensors) {
+            if (sensor.getActive()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -51,10 +73,10 @@ public class SecurityService {
         if(cat && getArmingStatus() == ArmingStatus.ARMED_HOME) {
             setAlarmStatus(AlarmStatus.ALARM);
         }
-        else if (customFunction) {
+        else if (allSensorsDeactivated()) {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         }
-        /* the else-statement below does not meet the 8th requirement. Commented out. --> Loop through all sensors! They need to be all deactivated! --> Do this in a new function which returns true or false
+        /* the else-statement below does not meet the 8th requirement and replaced by 'else if' above
         else {
             setAlarmStatus(AlarmStatus.NO_ALARM);
         }
