@@ -26,6 +26,7 @@ public class SecurityServiceTest {
 
     private SecurityService securityService; // All unit tests below test this specific ServiceClass
     private Sensor sensor;
+    private StatusListener statusListener;
 
     @Mock
     private FakeImage fakeImage;
@@ -104,6 +105,8 @@ public class SecurityServiceTest {
         when(newTestData.getAlarmStatus()).thenReturn(AlarmStatus.PENDING_ALARM);
 
         securityService.addSensor(sensor);
+        securityService.removeSensor(sensor); // added for full coverage
+        securityService.addSensor(sensor);
         sensor.setActive(true);
         securityService.changeSensorActivationStatus(sensor, true);
 
@@ -154,6 +157,20 @@ public class SecurityServiceTest {
     }
 
     @Test
+    public void processImage_noActiveSensorsAndNoCatImage_returnNoAlarm() {
+        Set<Sensor> sensorSet = Set.of(sensor);
+        when(newTestData.getSensors()).thenReturn(sensorSet);
+
+        securityService.addSensor(sensor); // sensor is deactivated per default
+
+        BufferedImage noCatImage = new BufferedImage(50, 50, 1);
+        when(fakeImage.imageContainsCat(eq(noCatImage), anyFloat())).thenReturn(false);
+        securityService.processImage((noCatImage));
+
+        verify(newTestData).setAlarmStatus(AlarmStatus.NO_ALARM);
+    }
+
+    @Test
     public void setArmingStatus_disarmSystem_returnAlarm() {
         // 9. Requirement: If the system is disarmed, set the status to no alarm.
         securityService.setArmingStatus(ArmingStatus.DISARMED);
@@ -187,5 +204,12 @@ public class SecurityServiceTest {
         securityService.processImage(catImage);
 
         verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+    }
+    
+    @Test
+    public void test_statusListener() {
+        // achieve full coverage
+        securityService.addStatusListener(statusListener);
+        securityService.removeStatusListener(statusListener);
     }
 }

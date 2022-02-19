@@ -24,6 +24,7 @@
 
   <dependencies>
     <!-- add your dependencies here! -->
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -85,4 +86,14 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>4.5.2.0</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

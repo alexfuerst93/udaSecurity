@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_inline_4_3_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catpoint-parent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/catpoint-parent.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imageService/imageService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/imageService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imageService/target/imageService-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/imageService-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imageService/target/surefire-reports/TEST-com.udacity.catpoint.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/surefire-reports/TEST-com.udacity.catpoint.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/surefire-reports/com.udacity.catpoint.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/surefire-reports/com.udacity.catpoint.AppTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/securityService/securityService.iml" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/securityService.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/com/udacity/catpoint/security/service/SecurityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/securityService/src/test/java/com/udacity/catpoint/security/service/SecurityServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/src/test/java/com/udacity/catpoint/security/service/SecurityServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/AlarmStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/AlarmStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/ArmingStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/ArmingStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/SensorType.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/data/SensorType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/service/SecurityService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/service/SecurityService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/service/SecurityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/com/udacity/catpoint/security/service/SecurityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/securityService/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/target/securityService-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/securityService-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/target/surefire-reports/TEST-com.udacity.catpoint.security.service.SecurityServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/surefire-reports/TEST-com.udacity.catpoint.security.service.SecurityServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/securityService/target/surefire-reports/com.udacity.catpoint.security.service.SecurityServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/surefire-reports/com.udacity.catpoint.security.service.SecurityServiceTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/securityService/target/test-classes/com/udacity/catpoint/security/service/SecurityServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/securityService/target/test-classes/com/udacity/catpoint/security/service/SecurityServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +86,21 @@
       <recent name="com.udacity.catpoint.security.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SecurityServiceTest.last">
-    <configuration name="SecurityServiceTest.last" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SecurityServiceTest">
+    <configuration name="CatpointApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.application.CatpointApp" />
+      <module name="securityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.catpoint.security.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -103,13 +110,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="last" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceTest.changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="securityService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.catpoint.security.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
+      <option name="METHOD_NAME" value="changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.processImage_" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.processImage_noActiveSensorsAndNoCatImage_returnNoAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -119,13 +141,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="processImage_" />
+      <option name="METHOD_NAME" value="processImage_noActiveSensorsAndNoCatImage_returnNoAlarm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityServiceTest.processImage_ActiveSensorsAndNoCatImage_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SecurityServiceTest.test_statusListener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="securityService" />
       <extension name="coverage">
         <pattern>
@@ -135,39 +157,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="processImage_ActiveSensorsAndNoCatImage_returnAlarm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityServiceTest.processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="securityService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udacity.catpoint.security.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityServiceTest.setArmingStatus_armedSystem_deactivateAllSensors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="securityService" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udacity.catpoint.security.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.udacity.catpoint.security.service" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.catpoint.security.service.SecurityServiceTest" />
-      <option name="METHOD_NAME" value="setArmingStatus_armedSystem_deactivateAllSensors(com.udacity.catpoint.security.data.ArmingStatus)" />
+      <option name="METHOD_NAME" value="test_statusListener" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SecurityServiceTest.last" />
-        <item itemvalue="JUnit.SecurityServiceTest.processImage_ActiveSensorsAndNoCatImage_returnAlarm" />
-        <item itemvalue="JUnit.SecurityServiceTest.setArmingStatus_armedSystem_deactivateAllSensors" />
-        <item itemvalue="JUnit.SecurityServiceTest.processImage_alarmAndActiveSensorsAndNoCatImage_returnAlarm" />
-        <item itemvalue="JUnit.SecurityServiceTest.processImage_" />
+        <item itemvalue="JUnit.SecurityServiceTest" />
+        <item itemvalue="JUnit.SecurityServiceTest.test_statusListener" />
+        <item itemvalue="JUnit.SecurityServiceTest.processImage_noActiveSensorsAndNoCatImage_returnNoAlarm" />
+        <item itemvalue="JUnit.SecurityServiceTest.changeSensorActivationStatus_pendingAndSensorActiveAndActivatedAgain_returnAlarm" />
+        <item itemvalue="Application.CatpointApp" />
       </list>
     </recent_temporary>
   </component>
@@ -215,5 +205,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/catpoint_parent$SecurityServiceTest.ic" NAME="SecurityServiceTest Coverage Results" MODIFIED="1645279000716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.udacity.catpoint.security.service.*</FILTER>
+    </SUITE>
   </component>
 </project>
