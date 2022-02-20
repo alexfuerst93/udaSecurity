@@ -205,6 +205,23 @@ public class SecurityServiceTest {
 
         verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
     }
+
+    @ParameterizedTest
+    @MethodSource("differentArmingStatus")
+    public void setArmingStatus_disarmedCatImageThenArmed_returnAlarm(ArmingStatus armingStatus) {
+        // Put the system as disarmed, scan a picture until it detects a cat, after that make it armed, it should make system in ALARM state
+        // 1. Store the cat status
+        // 2. Check cat status when system goes from disarmed to armed (parametrized!)
+        when(newTestData.getArmingStatus()).thenReturn(ArmingStatus.DISARMED);
+
+        BufferedImage catImage = new BufferedImage(50, 50, 1);
+        when(fakeImage.imageContainsCat(eq(catImage), anyFloat())).thenReturn(true);
+
+        securityService.processImage(catImage);
+        securityService.setArmingStatus(armingStatus);
+
+        verify(newTestData).setAlarmStatus(AlarmStatus.ALARM);
+    }
     
     @Test
     public void statusListener() {

@@ -24,6 +24,8 @@ public class SecurityService {
     private FakeImage imageService;
     private SecurityRepository securityRepository;
     private Set<StatusListener> statusListeners = new HashSet<>();
+    // added variable to meet the 11th requirement
+    private Boolean catDetected = false;
 
     public SecurityService(SecurityRepository securityRepository, FakeImage imageService) {
         this.securityRepository = securityRepository;
@@ -45,6 +47,10 @@ public class SecurityService {
                 if (sensor.getActive()) {
                     sensor.setActive(false);
                 }
+            }
+            // added another conditional to meet the 11th requirement
+            if (catDetected) {
+                setAlarmStatus(AlarmStatus.ALARM);
             }
         }
         securityRepository.setArmingStatus(armingStatus);
@@ -71,6 +77,14 @@ public class SecurityService {
      * @param cat True if a cat is detected, otherwise false.
      */
     private void catDetected(Boolean cat) {
+        // added code below to meet 11th requirement
+        if (cat) {
+            catDetected = true;
+        }
+        else {
+            catDetected = false;
+        }
+
         if(cat && getArmingStatus() == ArmingStatus.ARMED_HOME) {
             setAlarmStatus(AlarmStatus.ALARM);
         }
