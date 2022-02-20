@@ -207,7 +207,7 @@ public class SecurityServiceTest {
     }
     
     @Test
-    public void test_statusListener() {
+    public void statusListener() {
         // achieve full coverage
         securityService.addStatusListener(statusListener);
         securityService.removeStatusListener(statusListener);

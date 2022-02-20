@@ -48,6 +48,7 @@ public class SecurityService {
             }
         }
         securityRepository.setArmingStatus(armingStatus);
+        statusListeners.forEach(StatusListener::sensorStatusChanged);
     }
 
     /**
