@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/imageService-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/imageService-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/spotbugsXml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/spotbugsXml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/surefire-reports/TEST-com.udacity.catpoint.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/surefire-reports/TEST-com.udacity.catpoint.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imageService/target/surefire-reports/com.udacity.catpoint.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/imageService/target/surefire-reports/com.udacity.catpoint.AppTest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="8c462a58-36e0-4f95-af7e-21606a6051af" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
