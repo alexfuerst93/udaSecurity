@@ -1,3 +1,0 @@
-# UdaSecurity
-
-Main application features ...
